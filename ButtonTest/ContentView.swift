@@ -9,9 +9,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var showDetails = false
+    
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            Button(action: {
+                self.showDetails.toggle()
+            }) {
+                Text("Show details")
+            }
+            
+            if showDetails {
+                Text("You should....")
+            }
+        }
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
